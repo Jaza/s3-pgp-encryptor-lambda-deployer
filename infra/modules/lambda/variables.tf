@@ -1,0 +1,9 @@
+variable "environment" {}
+variable "region" {}
+variable "account_id" {}
+variable "pgp_encrypt_bucket_region" {}
+variable "pgp_encrypt_bucket_name" {}
+variable "pgp_public_key" {}
+variable "secrets_manager_region" {}
+variable "secrets_manager_secret_id" {}
+variable "secrets_manager_secret_key" {}

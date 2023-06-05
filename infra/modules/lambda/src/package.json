@@ -1,0 +1,13 @@
+{
+    "name": "s3-pgp-encryptor-lambda-deployer",
+    "version": "0.1.0",
+    "description": "Deploys s3-pgp-encryptor-lib to AWS Lambda.",
+    "main": "index.js",
+    "author": "Jeremy Epstein",
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/Jaza/s3-pgp-encryptor-lambda-deployer",
+    "repository": "github:Jaza/s3-pgp-encryptor-lambda-deployer",
+    "dependencies": {
+      "s3-pgp-encryptor-lib": "^0.1.0"
+    }
+  }
