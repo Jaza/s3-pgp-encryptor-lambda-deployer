@@ -17,7 +17,7 @@ Lambda.
 1. Install and use nodejs 18.x (e.g. with `nvm use 18`)
 1. `cd infra/modules/lambda/src`
 1. `npm install`
-1. `zip -r lambda_s3_pgp_encryptor.zip index.js node_modules`
+1. `zip -r lambda_s3_pgp_encryptor.zip index.js node_modules package.json`
 1. In the `infra` top-level directory, create a file called `backend.tfvars` with:
    `bucket = "name-of-s3-bucket-for-your-tfstate"`
    `region = "your-aws-region"`
