@@ -1,6 +1,7 @@
-import { config, logger, pgpEncryptS3Object } from "s3-pgp-encryptor-lib";
+import { createLogger, format, transports } from "winston";
+import { config, pgpEncryptS3Object } from "s3-pgp-encryptor-lib";
 
-export const handler = async (event) => {
+const _run = async (event, logger) => {
   if (!event.Records) {
     throw new Error("Missing event.Records");
   }
@@ -32,4 +33,21 @@ export const handler = async (event) => {
   const obj = s3.object;
 
   await pgpEncryptS3Object(firstRecord.awsRegion, bucket.name, obj.key, config, logger);
+};
+
+export const handler = async (event) => {
+  const logger = createLogger({
+    level: config.debugLogging ? "debug" : "info",
+    transports: [
+      new transports.Console({
+        format: format.json()
+      })
+    ]
+  });
+
+  try {
+    await _run(event, logger);
+  } catch (err) {
+    logger.error(err, err);
+  }
 };
