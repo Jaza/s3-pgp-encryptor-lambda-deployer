@@ -75,6 +75,8 @@ resource "aws_lambda_function" "s3_pgp_encryptor_lambda" {
   handler           = "index.handler"
   source_code_hash  = "${filebase64sha256("modules/lambda/src/lambda_s3_pgp_encryptor.zip")}"
   runtime           = "nodejs18.x"
+  timeout           = 30
+  memory_size       = 4096
 
   environment {
     variables = {
