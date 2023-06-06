@@ -9,6 +9,6 @@
     "homepage": "https://github.com/Jaza/s3-pgp-encryptor-lambda-deployer",
     "repository": "github:Jaza/s3-pgp-encryptor-lambda-deployer",
     "dependencies": {
-      "s3-pgp-encryptor-lib": "^0.2.0"
+      "s3-pgp-encryptor-lib": "^0.3.0"
     }
   }
